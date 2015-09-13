@@ -1,0 +1,23 @@
+{
+    "name": "phalcana/email",
+    "description": "Swift mailer wrapper for Phalcana",
+    "type": "phalcana-module",
+    "keywords": ["Phalcana", "Phalcon", "Kohana"],
+    "license": "BSD-3-Clause",
+    "homepage": "http://phalcana.com",
+    "authors": [
+        {
+            "name": "Neil Brayfield",
+            "email": "neil@brayfield.co.uk"
+        }
+    ],
+    "support": {
+        "email": "support@phalcana.com",
+        "issues": "https://github.com/braf/phalcana-email/issues"
+    },
+    "require": {
+        "phalcana/installer": "^0.8",
+        "phalcana/core": "^0.8",
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}
