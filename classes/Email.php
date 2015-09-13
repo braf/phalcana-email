@@ -3,6 +3,7 @@
 namespace Phalcana;
 
 use Phalcon\Di;
+use Phalcon\Di\Injectable;
 
 /**
  * Wrapper for swiftmailer Most of the code from Shadowhands Kohana Email module
@@ -12,7 +13,7 @@ use Phalcon\Di;
  * @author      Neil Brayfield
  */
 
-class Email extends \Phalcon\Di\Injectable
+class Email extends Injectable
 {
 
 
@@ -398,7 +399,7 @@ class Email extends \Phalcon\Di\Injectable
                 $name  = null;
             }
 
-            // Set the To addre
+            // Set the To address
             $message->setTo($email, $name);
 
             // Send this email
