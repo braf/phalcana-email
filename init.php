@@ -1,3 +1,3 @@
-<?php 
+<?php
 
 $di->set('email', 'Phalcana\Email');

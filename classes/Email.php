@@ -105,16 +105,10 @@ class Email extends Injectable
     public function __construct($subject = null, $message = null, $type = null)
     {
 
-        // Load Swiftmailer
-        if (!class_exists('Swift')) {
-            require_once $this->fs->findFile('vendor', 'swiftmailer/lib/swift_required');
-
-            \Swift::init(function () {
-                    // Set the default character set for everything
-                    \Swift_Preferences::getInstance()->setCharset('utf-8');
-            });
-
-        }
+        \Swift::init(function () {
+                // Set the default character set for everything
+                \Swift_Preferences::getInstance()->setCharset('utf-8');
+        });
 
 
         // Create a new message, match internal character set
