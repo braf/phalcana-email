@@ -9,13 +9,10 @@ use Phalcon\Di\Injectable;
  * Wrapper for swiftmailer Most of the code from Shadowhands Kohana Email module
  *
  * @package     Email
- * @category    Base
- * @author      Neil Brayfield
+ * @author      Neil Brayfield <neil@brayfield.uk>
  */
-
 class Email extends Injectable
 {
-
 
     /**
      * @var  object  Swiftmailer instance

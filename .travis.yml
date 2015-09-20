@@ -1,0 +1,27 @@
+language: php
+
+sudo: false
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+env:
+  global:
+  - PHALCANA_MODE=testing
+  - PHALCANA_MODULE=email
+
+install:
+  - composer self-update
+  - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b phalcon-v${PHALCON_VERSION}
+  - (cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize &> /dev/null && ./configure --silent --enable-phalcon &> /dev/null && make --silent -j4 &> /dev/null && make --silent install && phpenv config-add ../unit-tests/ci/phalcon.ini &> /dev/null)
+  - php -r 'echo \Phalcon\Version::get()."\n";'
+  - composer --prefer-source install
+  - shopt -s dotglob
+  - mkdir modules/userguide; mv !(system|vendor|modules|cphalcon) modules/userguide/
+  - mkdir app; mkdir app/cache; mkdir app/logs;
+
+script:
+  - php vendor/bin/phpcs -n --standard=PSR2 --encoding=utf-8 modules/userguide/
+  - phpunit --bootstrap modules/unittest/index.php modules/unittest/tests.php

@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/phalcana/email/v/stable)](https://packagist.org/packages/phalcana/email)
+[![Build Status](https://travis-ci.org/braf/phalcana-email.svg?branch=master)](https://travis-ci.org/braf/phalcana-email)
+[![Total Downloads](https://poser.pugx.org/phalcana/email/downloads)](https://packagist.org/packages/phalcana/email)
+[![License](https://poser.pugx.org/phalcana/email/license)](https://packagist.org/packages/phalcana/email)
+
 # Phalcana Email Module
 
 Swift mailer wrapper for the [Phalcana project](http://github.com/braf/phalcana-project).
