@@ -7,6 +7,9 @@ php:
   - 5.5
   - 5.6
 
+branches:
+  - master
+
 env:
   global:
   - PHALCANA_MODE=testing
@@ -19,9 +22,9 @@ install:
   - php -r 'echo \Phalcon\Version::get()."\n";'
   - composer --prefer-source install
   - shopt -s dotglob
-  - mkdir modules/userguide; mv !(system|vendor|modules|cphalcon) modules/userguide/
+  - mkdir modules/email; mv !(system|vendor|modules|cphalcon) modules/email/
   - mkdir app; mkdir app/cache; mkdir app/logs;
 
 script:
-  - php vendor/bin/phpcs -n --standard=PSR2 --encoding=utf-8 modules/userguide/
+  - php vendor/bin/phpcs -n --standard=PSR2 --encoding=utf-8 modules/email/
   - phpunit --bootstrap modules/unittest/index.php modules/unittest/tests.php
